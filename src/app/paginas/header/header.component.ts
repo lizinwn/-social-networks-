@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,17 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  userData: any;
+  constructor(private authService: AuthService){
+  
+  this.authService.userData$.subscribe((data) => {
+    this.userData = data;
+    console.log('Datos recibidos en el componente:', this.userData);
+  });
+  
+}
+cerrarSesion(){
+  this.authService.cerrarSesion()
 
+}
 }

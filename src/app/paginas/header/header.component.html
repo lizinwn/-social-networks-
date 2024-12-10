@@ -17,7 +17,9 @@
 
         <!-- Saludo al usuario -->
         <div class="user-greeting">
-            <p>Hola, <span id="username">Usuario</span>!</p>
+            <p>Hola, <span id="username">{{userData.nombre}}</span>!</p>
+           
         </div>
+        <button (click)="cerrarSesion()" >Cerrar Sesión</button>
     </div>
 </header>
