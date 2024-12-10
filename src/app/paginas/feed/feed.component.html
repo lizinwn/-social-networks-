@@ -5,19 +5,19 @@
     </div>
   
     <!-- Publicación 1 -->
-    <div class="post">
+    <div  *ngFor="let p of userData" class="post">
       <div class="post-header">
         <div class="user-info">
-          <img src="https://via.placeholder.com/50" alt="Usuario" class="user-avatar">
+          <img src="{{p.fotoUrl}}"  class="user-avatar">
           <div>
-            <p class="user-name">Juan Pérez</p>
+            <p class="user-name">{{p.nombre}}</p>
             <p class="post-time">Hace 2 horas</p>
           </div>
         </div>
       </div>
       <div class="post-content">
-        <p>Hoy fue un día increíble. ¡Gracias a todos por hacerlo especial!</p>
-        <img src="https://via.placeholder.com/600x300" alt="Foto" class="post-image">
+        <p>{{p.text}}</p>
+        <img src="{{p.imageUrl}}" class="post-image">
       </div>
       <div class="post-actions">
         <button>Me gusta</button>
@@ -26,25 +26,6 @@
       </div>
     </div>
   
-    <!-- Publicación 2 -->
-    <div class="post">
-      <div class="post-header">
-        <div class="user-info">
-          <img src="https://via.placeholder.com/50" alt="Usuario" class="user-avatar">
-          <div>
-            <p class="user-name">María López</p>
-            <p class="post-time">Hace 3 horas</p>
-          </div>
-        </div>
-      </div>
-      <div class="post-content">
-        <p>¡Nueva receta publicada en mi blog! 🍪 Ve a verla ahora: <a href="#">RecetasDeliciosas.com</a></p>
-      </div>
-      <div class="post-actions">
-        <button>Me gusta</button>
-        <button>Comentar</button>
-        <button>Compartir</button>
-      </div>
-    </div>
+    
   </div>
   

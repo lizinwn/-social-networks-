@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../../servicios/auth.service';
 import { CrearPostComponent } from '../crear-post/crear-post.component';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-feed',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.css'
 })

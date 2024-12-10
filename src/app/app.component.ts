@@ -4,6 +4,7 @@ import { LoginComponent } from './paginas/login/login.component';
 import { HeaderComponent } from "./paginas/header/header.component";
 import { AuthService } from './servicios/auth.service';
 import { NgIf } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
