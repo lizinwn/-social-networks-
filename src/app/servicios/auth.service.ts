@@ -250,6 +250,9 @@ export class AuthService {
     console.log("cerraste sesión")
 
   }
+  recuperarContraseña(mail: string){
+
+  }
 
 
 }

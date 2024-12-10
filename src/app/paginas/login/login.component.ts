@@ -35,7 +35,7 @@ export class LoginComponent {
     };
     // Métodos para manejar el envío
   onLogin() {
-    console.log('Datos de inicio de sesión:', this.loginData);
+    this.authService.login(this.loginData.email, this.loginData.password)
   }
 
   onRegister() {
@@ -58,7 +58,7 @@ export class LoginComponent {
   }
 
   onResetPassword() {
-    console.log('Correo para restablecer contraseña:', this.resetData.email);
+    this.authService.recuperarContraseña(this.resetData.email)
   }
   
   ForgotPassClick() {
