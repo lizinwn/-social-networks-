@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  constructor(private authService: AuthService){
+
+  }
   state = LoginCompState.LOGIN;
     // Modelos de datos
     loginData = {
@@ -35,7 +39,22 @@ export class LoginComponent {
   }
 
   onRegister() {
-    console.log('Datos de registro:', this.registerData);
+    if(!this.registerData.career && !this.registerData.confirmPassword && !this.registerData.email && !this.registerData.firstName && !this.registerData.lastName && !this.registerData.password){
+      alert("Completa todos los campos")
+    }else if(!this.igual(this.registerData.password, this.registerData.confirmPassword)){
+      alert("La contraseña no coincide")
+    }else if(this.registerData.password.length <6){
+      alert("La contraseña debe tener minimo 6 caracteres")
+
+    }else{
+      this.authService.registro(this.registerData.email, this.registerData.password, this.registerData.firstName, this.registerData.lastName,this.registerData.career)
+    }
+
+    
+  }
+  igual(text: string, text2: string) {
+    return text == text2;
+
   }
 
   onResetPassword() {
